@@ -1,0 +1,31 @@
+# font & text
+font-family = GeistMono Nerd Font Mono
+font-size = 15
+font-feature = -liga
+font-thicken = true
+
+# window & ui
+title = "Terminal"
+macos-titlebar-style = transparent
+window-padding-y = 0
+
+# colors & appearance
+background = #101010
+foreground = #FFFFFF
+cursor-style-blink = false
+
+# mouse & input
+mouse-hide-while-typing = true
+
+# clipboard
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+
+# behavior & updates
+auto-update = check
+auto-update-channel = stable
+
+# window size (in cells, not pixels)
+window-width = 85
+window-height = 25
+

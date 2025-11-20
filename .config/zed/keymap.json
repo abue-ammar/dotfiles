@@ -1,0 +1,21 @@
+[
+    {
+        "context": "Editor && edit_prediction_conflict",
+        "bindings": {
+            // Here we bind tab to accept even when there's a language server completion
+            "tab": "editor::AcceptEditPrediction"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-space": "editor::ShowCompletions"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "alt-r": "editor::Rename"
+        }
+    }
+]
