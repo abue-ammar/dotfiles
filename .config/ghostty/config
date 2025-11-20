@@ -28,4 +28,4 @@ auto-update-channel = stable
 # window size (in cells, not pixels)
 window-width = 85
 window-height = 25
-
+adjust-cursor-thickness=2
