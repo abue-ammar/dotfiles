@@ -1,52 +1,85 @@
+# -----------------------------
+# PATHS
+# -----------------------------
 
-# Homebrew settings
+# Homebrew (Apple Silicon)
 export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_NO_ENV_HINTS=1
 
-# Starship config
-eval "$(starship init zsh)"
-
-# NVM Settings
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# bun completions
-[ -s "/Users/rekindle/.bun/_bun" ] && source "/Users/rekindle/.bun/_bun"
-
-# bun
+# Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# zsh autocomplete
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-# Make Tab accept the autosuggestion zsh autocomplete
+
+# -----------------------------
+# STARSHIP PROMPT
+# -----------------------------
+
+eval "$(starship init zsh)"
+
+
+# -----------------------------
+# FNM (NODE VERSION MANAGER)
+# -----------------------------
+
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+
+# -----------------------------
+# ZSH PLUGINS
+# -----------------------------
+
+# Autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Syntax Highlighting (must be last)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Accept autosuggestion with TAB
 bindkey '^I' autosuggest-accept
 
-# zsh syntax highlighting 
-echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrcsource /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# -----------------------------
+# BUN COMPLETIONS
+# -----------------------------
+
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 
-# ---- Aliases ----
-alias ll='ls -laFh --color=auto'
+# -----------------------------
+# ALIASES
+# -----------------------------
+
+alias ll='ls -laFh'
 alias la='ls -A'
 alias l='ls -CF'
+
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gd='git diff'
 alias gco='git checkout'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# ---- History Settings ----
-HISTFILE=~/.zsh_history
+
+# -----------------------------
+# HISTORY
+# -----------------------------
+
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Added by Antigravity
-export PATH="/Users/rekindle/.antigravity/antigravity/bin:$PATH"
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
 
-# For Dot file aliasing
-alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+# bun completions
+[ -s "/Users/rekindle/.bun/_bun" ] && source "/Users/rekindle/.bun/_bun"
