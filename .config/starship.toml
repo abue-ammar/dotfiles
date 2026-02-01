@@ -168,7 +168,7 @@ format = """
 [bun]
 symbol = ""
 style = "bun_color"
-version_format = "v$major.$minor"
+version_format = "v$major.$minor.$patch"
 format = """
 [](fg:$style)[$symbol](bold fg:text_color bg:$style)[](fg:$style)\
 [](fg:background)[$version](bold fg:$style bg:background)[ ](fg:background)\
@@ -201,4 +201,7 @@ error_symbol = '[](fg:#eb3b5a)' # 💤💥💣💬😅
 vimcmd_symbol = '[](fg:#1ac0c6)'
 
 [line_break]
+disabled = true
+
+[git_metrics]
 disabled = true
