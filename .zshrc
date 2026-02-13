@@ -10,6 +10,10 @@ export HOMEBREW_NO_ENV_HINTS=1
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
@@ -81,5 +85,3 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 
-# bun completions
-[ -s "/Users/rekindle/.bun/_bun" ] && source "/Users/rekindle/.bun/_bun"
