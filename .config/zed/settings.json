@@ -1,16 +1,15 @@
 {
+    "edit_predictions": {
+        "provider": "copilot",
+    },
     "agent": {
         "default_profile": "write",
         "default_model": {
             "provider": "copilot_chat",
             "model": "gpt-5-mini",
         },
-        "preferred_completion_mode": "normal",
     },
     "icon_theme": "Base Charmed Icons",
-    "features": {
-        "edit_prediction_provider": "copilot",
-    },
     "telemetry": {
         "metrics": false,
         "diagnostics": false,
@@ -23,51 +22,6 @@
     "autosave": { "after_delay": { "milliseconds": 500 } },
     "buffer_font_size": 14,
     "soft_wrap": "editor_width",
-    "languages": {
-        "JavaScript": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true,
-            },
-        },
-        "TypeScript": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true,
-            },
-        },
-        "TSX": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true,
-            },
-        },
-    },
-    "lsp": {
-        "typescript-language-server": {
-            "initialization_options": {
-                "preferences": {
-                    "includeInlayParameterNameHints": "all",
-                    "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
-                    "includeInlayFunctionParameterTypeHints": true,
-                    "includeInlayVariableTypeHints": true,
-                    "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
-                    "includeInlayPropertyDeclarationTypeHints": true,
-                    "includeInlayFunctionLikeReturnTypeHints": true,
-                    "includeInlayEnumMemberValueHints": true,
-                },
-            },
-        },
-        "vscode-css-language-server": {
-            "settings": {
-                "css": {
-                    "lint": {
-                        "unknownAtRules": "ignore",
-                    },
-                },
-            },
-        },
-    },
     "toolbar": {
         "breadcrumbs": false,
         "quick_actions": false,
@@ -75,9 +29,8 @@
     },
     "terminal": {
         "cursor_shape": "bar",
-        "line_height": "standard",
         "font_family": "CaskaydiaMono Nerd Font Mono",
-        "alternate_scroll": "on",
+        "working_directory": "current_file_directory",
     },
 
     "experimental.theme_overrides": {
@@ -112,11 +65,12 @@
     "diagnostics": {
         "inline": {
             "enabled": true,
-            "update_debounce_ms": 150,
-            "padding": 4,
             "min_column": 80,
             "max_severity": "warning",
         },
+    },
+    "git_panel": {
+        "tree_view": true,
     },
     "scrollbar": {
         "axes": {
@@ -134,5 +88,77 @@
     },
     "collaboration_panel": {
         "button": false,
+    },
+    "outline_panel": {
+        "button": false,
+    },
+    "languages": {
+        "JavaScript": {
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll.eslint": true,
+            },
+        },
+        "TypeScript": {
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll.eslint": true,
+            },
+        },
+        "TSX": {
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll.eslint": true,
+            },
+        },
+        "CSS": {
+            "language_servers": [
+                "tailwindcss-intellisense-css",
+                "!vscode-css-language-server",
+                "...",
+            ],
+        },
+    },
+    "lsp": {
+        "typescript-language-server": {
+            "initialization_options": {
+                "preferences": {
+                    "includeInlayParameterNameHints": "all",
+                    "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+                    "includeInlayFunctionParameterTypeHints": true,
+                    "includeInlayVariableTypeHints": true,
+                    "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
+                    "includeInlayPropertyDeclarationTypeHints": true,
+                    "includeInlayFunctionLikeReturnTypeHints": true,
+                    "includeInlayEnumMemberValueHints": true,
+                },
+            },
+        },
+        "tailwindcss-language-server": {
+            "settings": {
+                "includeLanguages": {
+                    "templ": "html",
+                },
+                "experimental": {
+                    "classRegex": [
+                        "class=\"([^\"]*)\"",
+                        "className=\"([^\"]*)\"",
+                    ],
+                },
+            },
+        },
+        "gopls": {
+            "initialization_options": {
+                "hints": {
+                    "assignVariableTypes": true,
+                    "compositeLiteralFields": true,
+                    "compositeLiteralTypes": true,
+                    "constantValues": true,
+                    "functionTypeParameters": true,
+                    "parameterNames": true,
+                    "rangeVariableTypes": true,
+                },
+            },
+        },
     },
 }
