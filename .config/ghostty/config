@@ -10,6 +10,8 @@ window-subtitle = false
 macos-titlebar-style = tabs
 window-padding-y = 0
 shell-integration-features = no-cursor,sudo,no-title
+window-save-state = always
+quit-after-last-window-closed=true
 
 # colors & appearance
 background = #101010
@@ -33,9 +35,9 @@ window-height = 25
 window-colorspace = display-p3
 adjust-cursor-thickness=2
 
+
 # theme
 theme = Cursor Dark
-
 
 
 
