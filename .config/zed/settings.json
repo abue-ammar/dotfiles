@@ -118,6 +118,11 @@
                 "...",
             ],
         },
+        "Markdown": {
+            "format_on_save": "on",
+            "formatter": "prettier",
+            "remove_trailing_whitespace_on_save": false,
+        },
     },
     "lsp": {
         "vtsls": {
