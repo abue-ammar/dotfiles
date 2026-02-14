@@ -120,17 +120,55 @@
         },
     },
     "lsp": {
-        "typescript-language-server": {
-            "initialization_options": {
-                "preferences": {
-                    "includeInlayParameterNameHints": "all",
-                    "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
-                    "includeInlayFunctionParameterTypeHints": true,
-                    "includeInlayVariableTypeHints": true,
-                    "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
-                    "includeInlayPropertyDeclarationTypeHints": true,
-                    "includeInlayFunctionLikeReturnTypeHints": true,
-                    "includeInlayEnumMemberValueHints": true,
+        "vtsls": {
+            "settings": {
+                "typescript": {
+                    "inlayHints": {
+                        "parameterNames": {
+                            "enabled": "literals",
+                            "suppressWhenArgumentMatchesName": true,
+                        },
+                        "parameterTypes": {
+                            "enabled": true,
+                        },
+                        "variableTypes": {
+                            "enabled": true,
+                            "suppressWhenTypeMatchesName": true,
+                        },
+                        "propertyDeclarationTypes": {
+                            "enabled": true,
+                        },
+                        "functionLikeReturnTypes": {
+                            "enabled": true,
+                        },
+                        "enumMemberValues": {
+                            "enabled": true,
+                        },
+                    },
+                },
+                "javascript": {
+                    "inlayHints": {
+                        "parameterNames": {
+                            "enabled": "literals",
+                            "suppressWhenArgumentMatchesName": true,
+                        },
+                        "parameterTypes": {
+                            "enabled": true,
+                        },
+                        "variableTypes": {
+                            "enabled": true,
+                            "suppressWhenTypeMatchesName": true,
+                        },
+                        "propertyDeclarationTypes": {
+                            "enabled": true,
+                        },
+                        "functionLikeReturnTypes": {
+                            "enabled": true,
+                        },
+                        "enumMemberValues": {
+                            "enabled": true,
+                        },
+                    },
                 },
             },
         },
