@@ -1,53 +1,83 @@
 # -----------------------------
-# PATHS
+# ENV & PATHS
 # -----------------------------
 
 # Homebrew (Apple Silicon)
 export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Golang
+export GOPATH="$HOME/go"
+export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
+
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Golang
-export PATH=$PATH:/usr/local/go/bin
-export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 
 # -----------------------------
-# STARSHIP PROMPT
-# -----------------------------
-
-eval "$(starship init zsh)"
-
-
-# -----------------------------
-# FNM (NODE VERSION MANAGER)
+# NODE VERSION MANAGER
 # -----------------------------
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 
 # -----------------------------
-# ZSH PLUGINS
+# COMPLETION SYSTEM
+# -----------------------------
+
+autoload -Uz compinit
+
+# Rebuild compdump only if older than 24h
+if [[ ! -f ~/.zcompdump || ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
+
+
+# -----------------------------
+# PROMPT
+# -----------------------------
+
+eval "$(starship init zsh)"
+
+
+# -----------------------------
+# PLUGINS
 # -----------------------------
 
 # Autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # Syntax Highlighting (must be last)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Accept autosuggestion with TAB
-bindkey '^I' autosuggest-accept
+ZSH_HIGHLIGHT_STYLES[path]='none'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='none'
 
 
 # -----------------------------
-# BUN COMPLETIONS
+# KEY BINDINGS
+# -----------------------------
+
+bindkey '^I' autosuggest-accept
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+
+# -----------------------------
+# TOOL COMPLETIONS
 # -----------------------------
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -71,6 +101,9 @@ alias gco='git checkout'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias zshrc='open -e ~/.zshrc'
+alias reload='source ~/.zshrc'
+
 
 # -----------------------------
 # HISTORY
@@ -84,4 +117,12 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
+setopt HIST_IGNORE_SPACE
 
+
+# -----------------------------
+# EDITOR
+# -----------------------------
+
+export EDITOR="open -e -W"
+export VISUAL="$EDITOR"
