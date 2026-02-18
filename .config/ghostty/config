@@ -30,7 +30,7 @@ auto-update = check
 auto-update-channel = stable
 
 # window size (in cells, not pixels)
-window-width = 85
+window-width = 90
 window-height = 25
 window-colorspace = display-p3
 adjust-cursor-thickness=2
