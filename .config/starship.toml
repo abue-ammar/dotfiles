@@ -16,7 +16,7 @@ $time\
 $line_break
 $character
 """
-# right_format = "$cmd_duration"
+
 add_newline = false
 
 # backup character
@@ -30,42 +30,22 @@ add_newline = false
 palette = "mypalette"
 
 [palettes.mypalette]
-black_gray = "#3b3f4c"
-gray_white = "#dad7cd"
-white = "#ffffff"
-white_dark = "#dfe6e9"
-blue_light = "#74b9ff"
 blue = "#3a9efd"
 orange = "#fca17d"
-orange2 = "#db8a78"
-orange3 = "#f4a261"
-gray = "#3b3f4c"
-gray_dark = "#282C34"
-red_light = "#DA627D"
 red = "#eb3b5a"
-purple = "#ddacf5"
 cyan = "#1ac0c6"
-
 text_color = "#ffffff"
 background = "#3b3f4c"
-ghost_color = "#3a9efd"
 transient_prompt = "#3a9efd"
 username_color = "#3a9efd"
 directory_color = "#DA627D"
 git_color = "#fca17d"
 cmd_duration = "#ffffff"
 time_color = "#1ac0c6"
-rust_color = "#f07167"
-c_color = "#8093f1"
-py_color = "#db8a78"
 node_color = "#6a994e"
 go_color = "#00ADD8"
 bun_color = "#a277ff"
 
-# [env_var.ghost]
-# default="ghost"
-# style = "ghost_color"
-# format = "[](fg:$style)[󰊠](bold fg:text_color bg:$style)[](fg:$style bg:background)"
 
 [env_var.transient_prompt]
 default="transient_prompt"
@@ -91,10 +71,10 @@ format = """
 """
 
 [directory.substitutions]
-"Documents" = "󰲂"
-"Downloads" = ""
-"Music" = ""
-"Pictures" = ""
+"documents" = "󰲂"
+"downloads" = ""
+"music" = ""
+"pictures" = ""
 
 [git_branch]
 symbol = ""
@@ -170,7 +150,4 @@ error_symbol = '[](fg:#eb3b5a)' # 💤💥💣💬😅
 vimcmd_symbol = '[](fg:#1ac0c6)'
 
 [line_break]
-disabled = true
-
-[git_metrics]
 disabled = true
