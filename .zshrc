@@ -6,6 +6,9 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Starship config path
+STARSHIP_CONFIG=${HOME}/.config/starship.toml
+
 # Golang
 export GOPATH="$HOME/go"
 export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
