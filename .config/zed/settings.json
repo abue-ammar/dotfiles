@@ -27,8 +27,8 @@
     "theme": "Cursor Dark",
     "cursor_blink": true,
     "use_system_prompts": false,
-    "ui_font_family": "CaskaydiaMono Nerd Font Mono",
-    "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
+    "ui_font_family": "CaskaydiaCove Nerd Font Mono",
+    "buffer_font_family": "CaskaydiaCove Nerd Font Mono",
     "restore_on_startup": "launchpad",
     "autosave": { "after_delay": { "milliseconds": 500 } },
     "buffer_font_size": 14,
@@ -40,7 +40,7 @@
     },
     "terminal": {
         "cursor_shape": "bar",
-        "font_family": "CaskaydiaMono Nerd Font Mono",
+        "font_family": "CaskaydiaCove Nerd Font Mono",
     },
 
     "experimental.theme_overrides": {
