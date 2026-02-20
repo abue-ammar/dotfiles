@@ -7,10 +7,7 @@ $git_status\
 $git_commit\
 $git_state\
 $git_metrics\
-$rust\
-$c\
 $nodejs\
-$python\
 $golang\
 $bun\
 $fill\
