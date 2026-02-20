@@ -29,7 +29,7 @@
     "use_system_prompts": false,
     "ui_font_family": "CaskaydiaMono Nerd Font Mono",
     "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
-    "restore_on_startup": "last_workspace",
+    "restore_on_startup": "launchpad",
     "autosave": { "after_delay": { "milliseconds": 500 } },
     "buffer_font_size": 14,
     "soft_wrap": "editor_width",
@@ -41,7 +41,6 @@
     "terminal": {
         "cursor_shape": "bar",
         "font_family": "CaskaydiaMono Nerd Font Mono",
-        "working_directory": "current_file_directory",
     },
 
     "experimental.theme_overrides": {
