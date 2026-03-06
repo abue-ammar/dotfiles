@@ -9,7 +9,6 @@ title = " "
 window-subtitle = false
 macos-titlebar-style = tabs
 shell-integration-features = no-cursor,sudo,no-title
-window-save-state = always
 quit-after-last-window-closed=true
 window-padding-x = 6
 
