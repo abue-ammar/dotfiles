@@ -7,7 +7,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_NO_ENV_HINTS=1
 
 # Starship config path
-STARSHIP_CONFIG=${HOME}/.config/starship.toml
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 # Golang
 export GOPATH="$HOME/go"
@@ -33,13 +33,11 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # -----------------------------
 
 autoload -Uz compinit
+compinit -d ~/.zcompdump
 
-# Rebuild compdump only if older than 24h
-if [[ ! -f ~/.zcompdump || ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
+# Enable completion caching (faster)
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zcompcache
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
