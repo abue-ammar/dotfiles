@@ -16,10 +16,10 @@
         "enable_feedback": false,
         "default_model": {
             "provider": "copilot_chat",
-            "model": "claude-sonnet-4.6",
+            "model": "gpt-5.3-codex",
         },
     },
-    "icon_theme": "Base Charmed Icons",
+    "icon_theme": "Flow Deep",
     "telemetry": {
         "metrics": false,
         "diagnostics": false,
@@ -32,6 +32,9 @@
     "restore_on_startup": "launchpad",
     "autosave": { "after_delay": { "milliseconds": 500 } },
     "buffer_font_size": 14,
+    "buffer_line_height": {
+        "custom": 1.4,
+    },
     "soft_wrap": "editor_width",
     "toolbar": {
         "breadcrumbs": false,
@@ -46,14 +49,6 @@
     "experimental.theme_overrides": {
         "panel.focused_border": "#00000000",
         "editor.document_highlight.bracket_background": "#ffffff00",
-        //vesper theme overrides
-        // "border": "#202020",
-        // "editor.indent_guide": "#FFFFFF05",
-        // "editor.indent_guide_active": "#FFFFFF0A",
-        // "border.focused": "#FFC799",
-        // "border.selected": "#FFC799",
-        // "border.transparent": null,
-        // "border.disabled": "#101010"
     },
     "tabs": {
         "file_icons": true,
@@ -70,6 +65,7 @@
         "scrollbar": {
             "show": "never",
         },
+        "git_status_indicator": true,
     },
     "tab_size": 4,
     "diagnostics": {
