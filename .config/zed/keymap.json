@@ -1,6 +1,6 @@
 [
     {
-        "context": "Editor && edit_prediction_conflict",
+        "context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace))",
         "bindings": {
             // Here we bind tab to accept even when there's a language server completion
             "tab": "editor::AcceptEditPrediction"
