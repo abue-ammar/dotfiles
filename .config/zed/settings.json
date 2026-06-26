@@ -25,8 +25,10 @@
         "default_profile": "write",
         "enable_feedback": false,
         "default_model": {
+            "enable_thinking": true,
+            "effort": "high",
             "provider": "copilot_chat",
-            "model": "gpt-5.3-codex",
+            "model": "gemini-3.1-pro-preview",
         },
     },
     "icon_theme": "Flow Deep",
