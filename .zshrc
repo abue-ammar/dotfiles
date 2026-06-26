@@ -5,6 +5,10 @@
 # Homebrew (Apple Silicon)
 export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ASK=1
+export HOMEBREW_INSTALL_CLEANUP=1
+export HOMEBREW_NO_EMOJI=1
 
 # Starship config path
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
@@ -105,6 +109,9 @@ alias ...='cd ../..'
 alias zshrc='open -e ~/.zshrc'
 alias reload='source ~/.zshrc'
 
+alias brew-clean='brew update && brew upgrade && brew autoremove && brew cleanup -s'
+alias brewsize='du -sh $(brew --cellar)/* | sort -h'
+alias casksize='du -sh /Applications/*.app | sort -h'
 
 # -----------------------------
 # HISTORY
@@ -127,3 +134,5 @@ setopt HIST_IGNORE_SPACE
 
 export EDITOR="open -e -W"
 export VISUAL="$EDITOR"
+# bun completions
+[ -s "/Users/rekindle/.bun/_bun" ] && source "/Users/rekindle/.bun/_bun"
